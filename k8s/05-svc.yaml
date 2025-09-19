@@ -17,4 +17,4 @@ spec:                     # Service specification
     protocol: TCP        # Network protocol
     name: http          # Name for this port mapping
   type: ClusterIP        # Service type - accessible only within cluster
-                        # Change to LoadBalancer for external access
+                       
