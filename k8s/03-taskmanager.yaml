@@ -23,24 +23,6 @@ spec: # Desired state specification
       labels:
         app: taskmanager # Must match selector above
         version: v1
-<<<<<<< HEAD
-    spec:                 # Pod specification
-      containers:         # Containers in each Pod
-      - name: taskmanager # Container name
-        # Docker image from your CI/CD pipeline (update with your DockerHub username)
-        image: sonamdechen/task-manager:latest
-        ports:                    # Ports exposed by container
-        - containerPort: 8000     # Port the Flask app listens on
-          name: http             # Named port for Service reference
-        env:                      # Environment variables
-        - name: DATABASE_URL      # Database connection string
-          value: "postgresql://myuser:uWhSZwv54wXv1T7F@10.104.0.6:5432/02220169"
-        - name: SECRET_KEY        # Flask secret key
-          value: "kubernetes-secret-key-02220169"  # 📝 Replace 02220169
-        - name: FLASK_ENV
-          value: "production"
-
-=======
     spec: # Pod specification
       containers: # Containers in each Pod
         - name: taskmanager # Container name
@@ -62,7 +44,7 @@ apiVersion: v1 # API version for Service resources
 kind: Service # Resource type - network abstraction
 metadata: # Service information
   name: taskmanager-service
-  namespace: 02220169 # 📝 Replace 02220169 with your number
+  namespace: "02220169" # 📝 Replace 02220169 with your number
   labels:
     app: taskmanager
     student: "02220169" # 📝 Replace with your student number
@@ -81,4 +63,3 @@ spec: # Service specification
     spec:
       containers:
         - image: sonamdechen/task-manager:b3005cd46ad0047b38f7858030c06b5923d03031
->>>>>>> b791f0f795d0ca088fd090974dbaaf911ed52dc3
